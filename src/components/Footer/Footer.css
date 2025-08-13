@@ -1,0 +1,69 @@
+.footer {
+  margin: 50px 170px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  bottom: 0;
+}
+
+/* Top Section */
+.footer-top-left {
+  display: flex;
+  justify-content: flex-start; /* Align content to the left */
+  align-items: center;
+  width: 100%;
+}
+
+.footer-top-left p {
+  font-size: 22px;
+  color: #fff;
+  max-width: 100%;         /* Allow full width */
+  line-height: 1.5;        /* Improve readability */
+  text-align: justify;     /* Stretch text from left to right */
+  padding: 0 20px;         /* Optional: add horizontal padding */
+}
+
+/* Bottom Section */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  margin-bottom: 50px;
+  transform: translateX(108%);
+}
+
+/* Social Icons */
+.insta img {
+  transform: translateX(25%);
+}
+
+.linked img {
+  transform: translateX(20%);
+}
+
+.git,
+.insta,
+.linked {
+  cursor: pointer;
+
+}
+
+
+.git:hover,
+.linked:hover,
+.insta:hover {
+  transform: scale(1.1);
+}
+
+/* Link Reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
