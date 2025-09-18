@@ -2,6 +2,7 @@ import React from 'react'
 import './About.css'
 import theme_pattern from '../../assets/theme_pattern.svg'
 import Profile from '../../assets/developer.png';
+
 const About = () => {
     return (
         <div id='about' className='about'>
@@ -51,9 +52,6 @@ const About = () => {
                     <h1> Certified in Programming Languages</h1>
                     <p> Completed certifications in C++, Python, and JavaScript, mastering core concepts and practical applications.</p>
                 </div>
-               
-
-
             </div>
         </div>
     )

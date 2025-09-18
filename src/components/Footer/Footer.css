@@ -1,64 +1,107 @@
 .footer {
-  margin: 50px 170px;
+  margin: 50px 5% 0;
+  padding: 40px 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  bottom: 0;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Top Section */
-.footer-top-left {
-  display: flex;
-  justify-content: flex-start; /* Align content to the left */
-  align-items: center;
+.footer-top {
   width: 100%;
 }
 
+.footer-top-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
 .footer-top-left p {
-  font-size: 22px;
+  font-size: clamp(1rem, 2vw, 1.4rem);
   color: #fff;
-  max-width: 100%;         /* Allow full width */
-  line-height: 1.5;        /* Improve readability */
-  text-align: justify;     /* Stretch text from left to right */
-  padding: 0 20px;         /* Optional: add horizontal padding */
+  max-width: 800px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 20px;
 }
 
 /* Bottom Section */
 .footer-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  font-size: 18px;
+  justify-content: center;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  width: 100%;
 }
 
 .footer-bottom-right {
   display: flex;
   align-items: center;
-  gap: 80px;
-  margin-bottom: 50px;
-  transform: translateX(108%);
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
 }
 
 /* Social Icons */
-.insta img {
-  transform: translateX(25%);
-}
-
-.linked img {
-  transform: translateX(20%);
-}
-
 .git,
 .insta,
 .linked {
   cursor: pointer;
-
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  min-width: 80px;
 }
 
+.git a,
+.insta a,
+.linked a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.git img,
+.insta img,
+.linked img {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.git p,
+.insta p,
+.linked p {
+  font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
 
 .git:hover,
 .linked:hover,
 .insta:hover {
+  transform: translateY(-5px);
+  background: rgba(180, 21, 255, 0.1);
+  border: 1px solid rgba(180, 21, 255, 0.3);
+}
+
+.git:hover img,
+.linked:hover img,
+.insta:hover img {
   transform: scale(1.1);
 }
 
@@ -66,4 +109,153 @@
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* HR Styling */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer {
+    margin: 40px 4% 0;
+    padding: 35px 0;
+    gap: 25px;
+  }
+  
+  .footer-bottom-right {
+    gap: 50px;
+  }
+  
+  .git,
+  .insta,
+  .linked {
+    min-width: 70px;
+    padding: 8px;
+  }
+  
+  .git img,
+  .insta img,
+  .linked img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin: 35px 3% 0;
+    padding: 30px 0;
+    gap: 20px;
+  }
+  
+  .footer-top-left p {
+    padding: 0 15px;
+  }
+  
+  .footer-bottom-right {
+    gap: 40px;
+  }
+  
+  .git,
+  .insta,
+  .linked {
+    min-width: 65px;
+    padding: 6px;
+    gap: 6px;
+  }
+  
+  .git img,
+  .insta img,
+  .linked img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-bottom-right {
+    gap: 30px;
+  }
+  
+  .git,
+  .insta,
+  .linked {
+    min-width: 60px;
+    padding: 5px;
+  }
+  
+  .git img,
+  .insta img,
+  .linked img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin: 30px 2% 0;
+    padding: 25px 0;
+    gap: 18px;
+  }
+  
+  .footer-top-left p {
+    padding: 0 10px;
+  }
+  
+  .footer-bottom-right {
+    gap: 25px;
+    justify-content: space-around;
+    width: 100%;
+  }
+  
+  .git,
+  .insta,
+  .linked {
+    min-width: 55px;
+    padding: 4px;
+    gap: 4px;
+  }
+  
+  .git img,
+  .insta img,
+  .linked img {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 360px) {
+  .footer {
+    margin: 25px 1.5% 0;
+    padding: 20px 0;
+    gap: 15px;
+  }
+  
+  .footer-top-left p {
+    padding: 0 8px;
+  }
+  
+  .footer-bottom-right {
+    gap: 20px;
+  }
+  
+  .git,
+  .insta,
+  .linked {
+    min-width: 50px;
+    padding: 3px;
+  }
+  
+  .git img,
+  .insta img,
+  .linked img {
+    width: 20px;
+    height: 20px;
+  }
 }

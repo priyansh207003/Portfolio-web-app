@@ -3,76 +3,208 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 56px;
-    margin: 56px 120px;
+    gap: 60px;
+    margin: 80px 5%;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .services-title {
     position: relative;
+    text-align: center;
+    width: 100%;
 }
 
 .services-title h1 {
-    padding: 0 30px;
-    font-size: 80px;
+    font-size: clamp(2.5rem, 6vw, 5rem);
     font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: #fff;
 }
 
 .services-title img {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
     z-index: -1;
+    width: clamp(100px, 15vw, 200px);
+    height: auto;
 }
 
 .services-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-bottom: 56px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .services-format {
     display: flex;
     color: #fff;
     flex-direction: column;
-    justify-content: center;
-    gap: 14px;
-    padding: 18px;
-    border-radius: 10px;
-    border: 2px solid white;
-    transition: transform 0.5s, background-image 0.5s, border 0.5s;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.5s ease;
+    min-height: 250px;
+    box-sizing: border-box;
 }
 
 .services-format h3 {
-    font-size: 20px;
+    font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 600;
+    margin: 0;
+    color: #9b9494;
 }
 
 .services-format h2 {
-    font-size: 26px;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
     font-weight: 800;
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    margin: 0;
+    line-height: 1.3;
 }
 
 .services-format p {
     color: #ffffff;
-    font-size: 18px;
-    line-height: 28px;
-    max-width: 210px;
+    font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
 }
 
 .services-readmore {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     align-items: center;
-    margin-top: 14px;
+    margin-top: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.services-readmore p {
+    margin: 0;
+    font-size: clamp(0.85rem, 1.6vw, 1rem);
+    font-weight: 600;
+}
+
+.services-readmore img {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
 }
 
 .services-format:hover {
-    border: 2px solid #ff00ff;
+    border: 2px solid #B415FF;
+    background: rgba(180, 21, 255, 0.1);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(180, 21, 255, 0.3);
+}
+
+.services-format:hover .services-readmore {
+    gap: 18px;
+}
+
+.services-format:hover .services-readmore img {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services {
+        margin: 60px 4%;
+        gap: 50px;
+    }
     
-    transform: scale(1.05);
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .services-format {
+        padding: 22px;
+        min-height: 230px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        margin: 50px 3%;
+        gap: 40px;
+    }
+    
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .services-format {
+        padding: 20px;
+        min-height: 210px;
+        gap: 14px;
+    }
+    
+    .services-readmore {
+        margin-top: 14px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    
+    .services-format {
+        padding: 18px;
+        min-height: 200px;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .services {
+        margin: 40px 2%;
+        gap: 35px;
+    }
+    
+    .services-format {
+        padding: 16px;
+        min-height: 180px;
+        gap: 10px;
+    }
+    
+    .services-readmore {
+        margin-top: 12px;
+        gap: 8px;
+    }
+    
+    .services-title img {
+        width: clamp(80px, 12vw, 120px);
+        bottom: -5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .services {
+        margin: 30px 1.5%;
+        gap: 30px;
+    }
+    
+    .services-format {
+        padding: 14px;
+        min-height: 170px;
+    }
 }

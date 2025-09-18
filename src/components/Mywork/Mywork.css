@@ -1,57 +1,201 @@
-.mywork{
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
-}
-.mywork-title{
-    position: relative;
-}
-.mywork-title h1{
-    padding: 0 30px;
-    font-size: 80px;
-    font-weight: 600;
-}
-.mywork-title img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-
-}
-.mywork-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-
-}
-.mywork-container img{
+    gap: 60px;
+    margin: 80px 5%;
+    padding: 0;
     box-sizing: border-box;
-    width: 419px;
-    height: 280px;
-    transition: 0.3s;
+    overflow: hidden;
+}
+
+.mywork-title {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.mywork-title h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.mywork-title img {
+    position: absolute;
+    bottom: -10px;
+    right: 50%;
+    transform: translateX(50%);
+    z-index: -1;
+    width: clamp(100px, 15vw, 200px);
+    height: auto;
+}
+
+.mywork-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.mywork-container img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.5s ease;
     cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
-.mywork-container img:hover{
-    transform: scale(1.10);
-    border: 4px solid #ff00ff;
-    border-radius: 10px;
-    transition: 0.5s;
+
+.mywork-container img:hover {
+    transform: scale(1.05) translateY(-10px);
+    border: 4px solid #B415FF;
+    box-shadow: 0 15px 40px rgba(180, 21, 255, 0.4);
 }
-.mywork-spacemore{
-    display:flex ;
+
+.mywork-spacemore {
+    display: flex;
+    align-items: center;
     gap: 15px;
     border-radius: 50px;
-    border: 2px solid white;
-    padding: 30px 60px;
-    font-size: 22px;
+    border: 2px solid #fff;
+    padding: 18px 40px;
+    font-size: clamp(1rem, 2vw, 1.4rem);
     font-weight: 500;
-    transition: 0.6s;
+    transition: all 0.6s ease;
     cursor: pointer;
+    background: transparent;
+    color: #fff;
+    margin-top: 20px;
 }
-.mywork-spacemore:hover{
-    gap: 30px;
-    transition: 0.5s;
+
+.mywork-spacemore p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.mywork-spacemore img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.mywork-spacemore:hover {
+    gap: 25px;
+    background: rgba(180, 21, 255, 0.1);
+    border-color: #B415FF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(180, 21, 255, 0.3);
+}
+
+.mywork-spacemore:hover img {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .mywork {
+        margin: 60px 4%;
+        gap: 50px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+    
+    .mywork-container img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mywork {
+        margin: 50px 3%;
+        gap: 40px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .mywork-container img {
+        height: 200px;
+    }
+    
+    .mywork-spacemore {
+        padding: 16px 35px;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+    
+    .mywork-container img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mywork {
+        margin: 40px 2%;
+        gap: 35px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .mywork-container img {
+        height: 200px;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .mywork-spacemore {
+        padding: 14px 30px;
+        margin-top: 12px;
+        gap: 12px;
+    }
+    
+    .mywork-spacemore:hover {
+        gap: 18px;
+    }
+    
+    .mywork-title img {
+        width: clamp(80px, 12vw, 120px);
+        bottom: -5px;
+    }
+}
+
+@media (max-width: 360px) {
+    .mywork {
+        margin: 30px 1.5%;
+        gap: 30px;
+    }
+    
+    .mywork-container img {
+        height: 180px;
+        max-width: 300px;
+    }
+    
+    .mywork-spacemore {
+        padding: 12px 25px;
+        gap: 10px;
+    }
+    
+    .mywork-spacemore:hover {
+        gap: 15px;
+    }
 }

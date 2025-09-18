@@ -1,41 +1,59 @@
-
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding-top: 100px; 
+  padding: 80px 5% 60px;
+  min-height: calc(100vh - 80px);
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-
 .hero img {
-  width: clamp(160px, 28vw, 280px);
-  height: auto;
+  width: clamp(200px, 25vw, 300px);
+  height: clamp(200px, 25vw, 300px);
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  border: 4px solid transparent;
+  background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+  background-clip: padding-box;
+  box-shadow: 0 8px 32px rgba(185, 35, 225, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.05);
 }
 
 /* Heading */
 .hero h1 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-top: 10px;
-  color: #fff; /* matches your dark background */
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 20px 0 10px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .hero .name {
   font-weight: bold;
-  color: #B923E1;
+  background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 
 .animated-text {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  margin-top: 10px;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  margin: 15px 0 40px;
   color: #9b9494;
+  min-height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 
 .hero-action {
   display: flex;
@@ -43,48 +61,140 @@
   gap: 20px;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 500;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  flex-wrap: wrap; /* buttons stack on very small screens */
+  margin-top: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
 }
 
 .hero-connect,
 .hero-resume {
-  padding: 16px 28px;
+  padding: clamp(12px, 2vw, 18px) clamp(20px, 4vw, 35px);
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  text-align: center;
+  min-width: 140px;
 }
 
 /* Connect button */
 .hero-connect {
   background: linear-gradient(264deg, #DF8908 -5.09%, #b415FF 106.28%);
   color: #fff;
+  border: 2px solid transparent;
 }
+
 .hero-connect:hover {
   border: 2px solid #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(185, 35, 225, 0.4);
 }
 
 /* Resume button */
 .hero-resume {
   border: 2px solid #fff;
   color: #fff;
+  background: transparent;
 }
+
 .hero-resume:hover {
   border-color: #b415FF;
+  background: rgba(180, 21, 255, 0.1);
+  transform: translateY(-2px);
 }
 
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 60px 4% 50px;
+  }
+  
+  .hero img {
+    margin-bottom: 25px;
+  }
+  
+  .animated-text {
+    margin: 12px 0 35px;
+  }
+  
+  .hero-action {
+    gap: 15px;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 50px 5% 40px;
+    min-height: calc(100vh - 70px);
+  }
+  
+  .hero img {
+    margin-bottom: 20px;
+  }
+  
+  .hero h1 {
+    margin: 15px 0 8px;
+  }
+  
+  .animated-text {
+    margin: 10px 0 30px;
+  }
+  
+  .hero-action {
+    gap: 12px;
+    margin-top: 20px;
+  }
+  
+  .hero-connect,
+  .hero-resume {
+    min-width: 130px;
+  }
+}
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 40px 4% 30px;
+  }
+  
   .hero-action {
     flex-direction: column;
     gap: 15px;
+    width: 100%;
+    max-width: 280px;
   }
 
   .hero-connect,
   .hero-resume {
-    width: 100%; 
-    text-align: center;
+    width: 100%;
+    min-width: unset;
+    max-width: 250px;
+  }
+  
+  .hero img {
+    margin-bottom: 15px;
+  }
+  
+  .animated-text {
+    margin: 8px 0 25px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding: 30px 3% 25px;
+  }
+  
+  .hero-action {
+    max-width: 240px;
+  }
+  
+  .hero-connect,
+  .hero-resume {
+    padding: 10px 15px;
+    font-size: 0.9rem;
   }
 }
