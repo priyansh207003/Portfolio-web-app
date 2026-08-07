@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import underline from '../../assets/nav_underline.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import profile from '../../assets/Profile_img.jpg';
 
 function Navbar() {
   const [menu, setMenu] = useState("home");
@@ -112,6 +113,14 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+        <div className="mobile-profile-header">
+          <img src={profile} alt="Priyansh Tiwari" className="mobile-profile-img" />
+          <div className="mobile-profile-info">
+            <h3>Priyansh Tiwari</h3>
+            <p>IoT & Full-Stack Developer</p>
+          </div>
+        </div>
+
         <ul>
           <li>
             <AnchorLink 

@@ -11,13 +11,6 @@ const projects = [
     desc: 'Co-authored published research chapter (2026). Achieved 90% classification accuracy.'
   },
   { 
-    name: 'TinyML Food Spoilage Detection', 
-    category: 'TinyML · Embedded AI', 
-    tags: ['Arduino BLE 33', 'Edge Impulse', 'MIT App Inventor'],
-    link: 'https://github.com/priyansh207003/Food-spoilage-detection-and-prediction-using-arduino-nano-ble-33-ml-kit',
-    desc: 'On-device machine learning model with 85% accuracy and 40% latency reduction.'
-  },
-  { 
     name: 'Clinic-GO Flow Management', 
     category: 'Full-Stack · Smart Healthcare', 
     tags: ['FastAPI', 'IBM Watson', 'Python'],
@@ -37,6 +30,13 @@ const projects = [
     tags: ['ESP32', 'GSM', 'GPS', 'Impact Sensor'],
     link: 'https://github.com/priyansh207003/Smart-Human-Life-Safety-and-Alert-System-for-Vehicle-Accident-Victims',
     desc: 'Real-time vehicle crash telemetry and automated emergency alert dispatch.'
+  },
+  { 
+    name: 'TinyML Food Spoilage Detection', 
+    category: 'TinyML · Embedded AI', 
+    tags: ['Arduino BLE 33', 'Edge Impulse', 'MIT App Inventor'],
+    link: 'https://github.com/priyansh207003/Food-spoilage-detection-and-prediction-using-arduino-nano-ble-33-ml-kit',
+    desc: 'On-device machine learning model with 85% accuracy and 40% latency reduction.'
   },
   { 
     name: 'Industrial IoT Machine Telemetry', 
