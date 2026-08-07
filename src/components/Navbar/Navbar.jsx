@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
-import logo from '../../assets/logo.svg'
 import underline from '../../assets/nav_underline.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
@@ -47,9 +46,10 @@ function Navbar() {
   return (
     <>
       <div className='navbar'>
-        <div className="navbar-logo">
-          <img src={logo} alt="Logo" />
-        </div>
+        <AnchorLink className="navbar-logo" href="#home" aria-label="Priyansh Tiwari home">
+          <span className="logo-mark">PT</span>
+          <span className="logo-name">priyansh<span>.dev</span></span>
+        </AnchorLink>
 
         {/* Desktop Navigation */}
         <ul className="nav-menu">

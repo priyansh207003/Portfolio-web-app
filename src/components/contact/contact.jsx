@@ -56,7 +56,7 @@ const Contact = () => {
             </div>
             <div className="contact-detail">
               <img src={location_icon} alt="Location" />
-              <p>Shahpura (Bhitoni), Jabalpur</p>
+              <p>Vijay Nagar, Indore</p>
             </div>
             <div className="contact-detail">
               <img src={call_icon} alt="Phone" />

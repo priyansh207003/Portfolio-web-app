@@ -1,169 +1,18 @@
-/* Global Responsive Styles - Add this to your main CSS file or index.css */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background-color: #161513;
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
-  width: 100%;
-  min-height: 100vh;
-}
-
-/* Prevent horizontal scrolling globally */
-html, body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Container wrapper to prevent overflow */
-.container {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Ensure all images are responsive */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Responsive typography */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  margin: 0;
-  font-weight: 600;
-}
-
-p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* Responsive utilities */
-.text-center {
-  text-align: center;
-}
-
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  flex-direction: column;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.w-full {
-  width: 100%;
-}
-
-.h-full {
-  height: 100%;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(264deg, #B415FF -5.09%, #DF8908 106.28%);
-}
-
-/* Focus styles for accessibility */
-*:focus {
-  outline: 2px solid #B415FF;
-  outline-offset: 2px;
-}
-
-/* Button reset */
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-/* Link styles */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Selection styles */
-::selection {
-  background: rgba(180, 21, 255, 0.3);
-  color: #fff;
-}
-
-/* Smooth animations */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Responsive breakpoints helper classes */
-.mobile-only {
-  display: none;
-}
-
-.desktop-only {
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .mobile-only {
-    display: block;
-  }
-  
-  .desktop-only {
-    display: none;
-  }
-}
-
-/* Prevent text selection on interactive elements */
-.no-select {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Loading animation utility */
-.loading {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.loading.show {
-  opacity: 1;
-}
+:root { --bg: #090d18; --panel: rgba(18, 25, 43, .78); --line: rgba(148, 163, 184, .17); --text: #f7f8fc; --muted: #9aa6bb; --cyan: #61e7f5; --violet: #a78bfa; }
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; background: var(--bg); }
+body { min-width: 320px; overflow-x: hidden; color: var(--text); font-family: Manrope, sans-serif; background: radial-gradient(circle at 80% -10%, rgba(96, 92, 255, .2), transparent 28rem), radial-gradient(circle at 0 34%, rgba(39, 212, 220, .11), transparent 24rem), var(--bg); }
+body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .25; background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(to bottom, #000, transparent 80%); }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, textarea { font: inherit; }
+::selection { background: var(--violet); color: #090d18; }
+::-webkit-scrollbar { width: 9px; } ::-webkit-scrollbar-thumb { background: #4b556d; border-radius: 100px; }
+.about, .services, .mywork, .contact { max-width: 1180px; margin: 0 auto; padding: 110px 28px 0; }
+.about-title, .services-title, .mywork-title, .contact-title { text-align: left; position: relative; }
+.about-title h1, .services-title h1, .mywork-title h1, .contact-title h1 { font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -.075em; font-weight: 800; }
+.about-title h1::before, .services-title h1::before, .mywork-title h1::before, .contact-title h1::before { content: '// '; color: var(--cyan); font-family: 'DM Mono', monospace; font-size: .45em; vertical-align: middle; letter-spacing: 0; }
+.about-title img, .services-title img, .mywork-title img, .contact-title img { display: none; }
+@media (max-width: 650px) { .about, .services, .mywork, .contact { padding: 76px 20px 0; } }

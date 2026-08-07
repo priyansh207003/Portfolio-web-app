@@ -1,7 +1,5 @@
 import React from 'react'
 import './Footer.css';
-import footer_logo from '../../assets/logo.svg'
-import user_icon from '../../assets/user_icon.svg'
 import github from '../../assets/icons8-github-50.png'
 import linkedin from '../../assets/icons8-linkedin-50.png'
 import instagram from '../../assets/icons8-instagram-50.png'

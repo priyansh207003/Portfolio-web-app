@@ -1,60 +1,74 @@
-import React from 'react'
-import './About.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
+import React from 'react';
+import './About.css';
 import Profile from '../../assets/developer.png';
 
-const About = () => {
-    return (
-        <div id='about' className='about'>
-            <div className="about-title">
-                <h1>About Me</h1>
-                <img src={theme_pattern} alt="" />
-            </div>
-            <div className="about-section">
-                <div className="about-left">
-                    <img src={Profile} alt="" />
-                </div>
-                <div className="about-right">
-                    <div className="about-para">
-                        <p>I'm an Electronics and Communication Engineering student with a passion for building intelligent systems that bridge hardware and software. From developing accident detection devices using microcontrollers to streamlining hospital workflows with AI-powered chatbots, I thrive on solving real-world problems through code and creativity.</p>
-                        <p>I specialize in MERN stack development using React and FastAPI, and I’ve explored IoT integration with ESP32, GSM modules, and sensors. My experience spans hackathons like IBM Granite and Smart India Hackathon, where I’ve collaborated on impactful solutions in healthcare and environmental monitoring.</p>
-                    </div>
-                    <div className="about-skills">
-                        <div className="about-skill"><p>HTML & CSS</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>JavaScript</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>React.JSX</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>Node.js</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>Express.JS</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>Java</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>Python</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>Arduino</p><hr style={{ width: "50%" }} /></div>
-                        <div className="about-skill"><p>Esp-32,8266</p><hr style={{ width: "50%" }} /></div>
-                    </div>
-                </div>
-            </div>
-            <div className="about-achievements">
-                <div className="about-achievement">
-                    <h1> 1st Position in 2nd Year (2023-2024)</h1>
-                    <p> Awarded Certificate of Merit for academic excellence at Gyan Ganga College of Technology.</p>
-                </div>
-                <hr />
-                <div className="about-achievement">
-                    <h1> IBM Granite Hackathon 2025</h1>
-                    <p> Developed Clinic-GO, a smart clinic flow management system using FastAPI and IBM Watson Assistant.</p>
-                </div>
-                <hr />
-                <div className="about-achievement">
-                    <h1> Certified in CCNA 1</h1>
-                    <p> Gained knowledge and  experience in IP addressing, router/switch configuration, and networking fundamentals.</p>
-                </div>
-                <hr />
-                <div className="about-achievement">
-                    <h1> Certified in Programming Languages</h1>
-                    <p> Completed certifications in C++, Python, and JavaScript, mastering core concepts and practical applications.</p>
-                </div>
-            </div>
-        </div>
-    )
-}
+const skills = [
+  { name: 'ESP32 & Microcontrollers', level: '95%' },
+  { name: 'React.js & Full-Stack Web', level: '90%' },
+  { name: 'FastAPI, Node & REST APIs', level: '90%' },
+  { name: 'MQTT, WebSockets & TCP/IP', level: '92%' },
+  { name: 'TinyML & Edge AI Impulse', level: '85%' },
+  { name: 'PyTorch & OpenCV Vision', level: '88%' },
+  { name: 'MongoDB & PostgreSQL', level: '85%' },
+  { name: 'Docker, AWS & Linux', level: '80%' },
+];
 
-export default About
+const achievements = [
+  ['01', 'Published Research Book Chapter', 'Co-authored a peer-reviewed research chapter on AI-enabled waste segregation and monitoring published in Advances in Electronics and Communication Systems (Volume 6, 2026).'],
+  ['02', 'Best Project Award Winner', 'Won the Best Project Award at the National Science Day project exhibition for an AI- and IoT-based hardware-software solution.'],
+  ['03', 'ManaraLabs IoT Engineer Intern', 'Designed IIoT solutions with ESP32 & Vicharak Axon across 5 production machines, cutting reporting time by 20% and fault detection time by 15%.'],
+  ['04', 'TinyML Food Spoilage Edge AI', 'Prototyped on-device food spoilage detection model on Arduino Nano 33 BLE Sense with 85% inference accuracy and 40% lower latency.'],
+  ['05', 'BSNL 5G Technology Certification', 'Completed hands-on certification training in 5G Communication Technology conducted by BSNL in Jabalpur.'],
+  ['06', 'STEM Hardware & Software Mentor', 'Trained 50+ students & educators at STEM Learning in Arduino and robotics, boosting practical skill retention by 30%.'],
+];
+
+const About = () => (
+  <section id="about" className="about">
+    <div className="about-title">
+      <h1>About Me</h1>
+    </div>
+    
+    <div className="about-section">
+      <div className="about-left">
+        <img src={Profile} alt="Developer working on IoT and Full-Stack code" />
+      </div>
+      
+      <div className="about-right">
+        <div className="about-para">
+          <p>
+            I’m an Electronics and Communication Engineering graduate (B.Tech 2022–2026, CGPA 8.0/10) and IoT Implementation Engineer specializing in bridging hardware microcontrollers with scalable full-stack web platforms.
+          </p>
+          <p>
+            My experience spans industrial IoT telemetry (ESP32, Vicharak Axon, Raspberry Pi), edge AI vision systems (Jetson Nano, TinyML), high-concurrency microservices (FastAPI, Fastify, Node.js), and modern responsive dashboards (React.js, WebSockets, REST APIs).
+          </p>
+        </div>
+
+        <div className="about-skills">
+          {skills.map((skill) => (
+            <div className="about-skill" key={skill.name}>
+              <div className="skill-info">
+                <span className="skill-name">{skill.name}</span>
+                <span className="skill-pct">{skill.level}</span>
+              </div>
+              <div className="skill-bar-bg">
+                <div className="skill-bar-fill" style={{ width: skill.level }}></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div className="about-achievements">
+      {achievements.map(([number, title, description]) => (
+        <article className="about-achievement" key={number}>
+          <span className="achievement-number">{number}</span>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+);
+
+export default About;
