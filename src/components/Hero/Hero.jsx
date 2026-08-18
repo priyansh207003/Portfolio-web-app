@@ -2,7 +2,7 @@ import React from 'react';
 import './Hero.css';
 import profile from '../../assets/Profile_img.jpg';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import resume from '../../assets/IOT Implementation Engineer Resume.pdf';
+import resume from '../../assets/IOT Implementation Engineer.pdf';
 import githubIcon from '../../assets/icons8-github-50.png';
 import linkedinIcon from '../../assets/icons8-linkedin-50.png';
 
